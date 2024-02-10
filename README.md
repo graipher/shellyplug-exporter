@@ -19,4 +19,5 @@ docker run --it -rm \
 
 ## Limitations
 
-The port the API listens on is currently hard-coded to 2112
+* the port the API listens on is currently hard-coded to 2112
+* the period with which the ShellyPlug is scraped is hard-coded to 1 minute
