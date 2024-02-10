@@ -20,7 +20,7 @@ RUN go mod verify
 
 COPY . /app/
 ARG GOARCH=amd64
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=$GOARCH go build -o /main main.go
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=$GOARCH go build -ldflags="-s -w" -o /main main.go
 
 FROM gcr.io/distroless/static-debian12
 

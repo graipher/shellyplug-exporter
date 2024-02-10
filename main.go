@@ -75,7 +75,6 @@ type ShellyplugResponse struct {
 func getMetrics(url string) *ShellyplugResponse {
 	log.Println("Getting status using url " + url + "/rpc/Shelly.GetStatus")
 	res, err := http.Get(url + "/rpc/Shelly.GetStatus")
-	log.Println("Got status")
 	if err != nil {
 		log.Println("Error getting Shelly Plug status")
 		return nil
@@ -154,7 +153,7 @@ var (
 	}, []string{"mac"})
 
 	availableUpdatesShelly = promauto.NewGaugeVec(prometheus.GaugeOpts{
-		Name: "shellyplug_available_updates",
+		Name: "shellyplug_available_updates_info",
 		Help: "Information about available updates",
 	}, []string{"mac", "version"})
 
